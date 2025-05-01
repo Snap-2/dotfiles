@@ -1,0 +1,40 @@
+[general]
+# Base Theme
+import = [
+"~/.config/alacritty/alabaster_dark.toml",
+]
+
+[font]
+# Will need to install the Caskaydia Mono Nerd Font from nerdfonts.com (probably pretty obvious)
+normal = { family = "CaskaydiaMono Nerd Font", style = "Regular"}
+bold = { family = "CaskaydiaMono Nerd Font", style = "Bold"}
+italic = { family = "CaskaydiaMono Nerd Font", style = "Italic"}
+bold_italic = { family = "CaskaydiaMono Nerd Font", style = "Bold Italic"}
+size = 10
+
+[colors.normal]
+black = "#0E1415"
+red = "#FB534B"
+green = "#75D350"
+yellow = "#FFC532"
+blue = "#1A76FF"
+magenta = "#F28CA7"
+cyan = "#42CDFF"
+white = "#F0F0F0"
+
+[colors.bright]
+black = "#777777"
+red = "#FF8080"
+green = "#B0FF6B"
+yellow = "#FFD9A3"
+blue = "#78A1FF"
+magenta = "#FFBCCE"
+cyan = "#A0E6FF"
+white = "#FFFFFF"
+
+[window]
+# Blur doesn't work with cinnamon sadly they use their own wm and compositor (muffin)
+# Quite a shame because it's really pretty
+blur = false
+
+decorations = "Full"
