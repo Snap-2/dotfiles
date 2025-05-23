@@ -8,5 +8,5 @@ These are mostly cool and silly .config files with modifications catered to how 
 
 ```bash
 cd clone/location
-make
+make install
 ```
