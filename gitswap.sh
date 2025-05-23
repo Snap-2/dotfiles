@@ -3,14 +3,18 @@ while true; do
   case $account in
     [1] )
       echo "Selecting personal account..."
-      git config --global user.name credential.personal.name
-      git config --global user.email credential.personal.email
+      name=$(git config --global credential.personal.name)
+      git config --global user.name $name
+      email=$(git config --global credential.personal.email)
+      git config --global user.email $email
       break
       ;;
     [2] )
       echo "Selecting work account..."
-      git config --global user.name credential.work.name
-      git config --global user.email credential.work.email
+      name=$(git config --global credential.work.name)
+      git config --global user.name $name
+      email=$(git config --global credential.work.email)
+      git config --global user.email $email 
       exit
       ;;
     * )
