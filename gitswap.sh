@@ -7,6 +7,12 @@ while true; do
       git config --global user.name $name
       email=$(git config --global credential.personal.email)
       git config --global user.email $email
+
+      # MUST BE USING CREDENTIAL MANAGER STORE (PLAIN TEXT STORAGE EWWW I KNOW)
+      if $(grep $name ~/.git-credentials) == ""
+          echo "Sending creds to alternate file..."
+          echo "$(cat ~/.git-credentials)" > ~/.git-creds-$name # makes a new file for it
+
       break
       ;;
     [2] )
@@ -15,6 +21,12 @@ while true; do
       git config --global user.name $name
       email=$(git config --global credential.work.email)
       git config --global user.email $email 
+
+      # MUST BE USING CREDENTIAL MANAGER STORE (PLAIN TEXT STORAGE EWWW I KNOW)
+      if $(grep $name ~/.git-credentials) == ""
+          echo "Sending creds to alternate file..."
+          echo "$(cat ~/.git-credentials)" > ~/.git-creds-$name # makes a new file for it
+
       exit
       ;;
     * )
