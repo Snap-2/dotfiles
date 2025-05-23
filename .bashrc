@@ -9,6 +9,7 @@
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias objdump='objdump -M intel'
+alias gitswap='bash ~/gitswap.sh'
 
 # severe lack of bnuyy...
 
