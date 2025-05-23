@@ -27,9 +27,6 @@ while true; do
 
       git config --global credential.work.helper manager
 
-      # SETUP ALIAS FOR GITSWAP
-      alias gitswap="bash ~/gitswap.sh"
-
       break
       ;;
     [Nn] )

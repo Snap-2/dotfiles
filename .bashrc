@@ -33,4 +33,24 @@ function get_branch() {
     fi
 }
 
-PS1="\[${BOLD}\][\[${MAGENTA}\]\u\$(get_branch) \[${WHITE}\]\W] \$ \[${RESET}\]"
+function get_account() {
+    git rev-parse --is-inside-work-tree &>/dev/null || return
+
+    work_name=$(git config --global credential.work.name)
+    personal_name=$(git config --global credential.personal.name)
+
+    work_presence=$(grep -c $work_name ~/.git-credentials)
+    personal_presence=$(grep -c $personal_name ~/.git-credentials)
+
+    if [ $work_presence == 0 ]
+    then
+        echo " [Personal Git]"
+    fi
+
+    if [ $personal_presence == 0 ]
+    then
+        echo " [Work Git]"
+    fi
+}
+
+PS1="\[${BOLD}\][\[${MAGENTA}\]\u\[${WHITE}\]\$(get_account)\$(get_branch) \[${WHITE}\]\W] \$ \[${RESET}\]"
