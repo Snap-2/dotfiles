@@ -28,3 +28,10 @@ require "lsp_signature".setup({
       border = "rounded"
     }
 })
+
+local lspconfig = require('lspconfig')
+
+-- SWIFT - SourceKit
+lspconfig.sourcekit.setup {
+    root_dir = lspconfig.util.root_pattern(".git", "Package.swift", "compile_commands.json"),
+}

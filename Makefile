@@ -18,4 +18,3 @@ update:
 	cp -r ~/.config/nvim nvim
 	cp ~/gitswap.sh gitswap.sh
 	cp ~/.bashrc .bashrc
-	bash setup-git.sh
