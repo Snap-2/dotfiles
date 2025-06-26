@@ -55,4 +55,5 @@ require('pckr').add{
     'Raimondi/delimitMate';
     'itchyny/lightline.vim';
     'Snap-2/secondary-presence.nvim';
+    'lukas-reineke/indent-blankline.nvim';
 }

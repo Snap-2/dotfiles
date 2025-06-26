@@ -27,9 +27,9 @@ function get_branch() {
     branch=$(git branch --show-current 2>/dev/null)
 
     if [ -z "$(git status --porcelain 2>/dev/null)" ]; then
-        echo -e " ${GREEN}${branch}"
+        echo -e " \[${GREEN}\]${branch}"
     else
-        echo -e " ${RED}${branch}"
+        echo -e " \[${RED}\]${branch}"
     fi
 }
 
@@ -53,4 +53,4 @@ function get_account() {
     fi
 }
 
-PS1="\[${BOLD}\][\[${MAGENTA}\]\u\[${WHITE}\]\$(get_account)\$(get_branch) \[${WHITE}\]\W] \$ \[${RESET}\]"
+PS1="\[${BOLD}\][\[${MAGENTA}\]\u\[${WHITE}\]$(get_account)$(get_branch) \[${WHITE}\]\W] \$ \[${RESET}\]"
