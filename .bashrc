@@ -54,3 +54,5 @@ function get_account() {
 }
 
 PS1="\[${BOLD}\][\[${MAGENTA}\]\u\[${WHITE}\]\$(get_account)\$(get_branch) \[${WHITE}\]\W] \$ \[${RESET}\]"
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
